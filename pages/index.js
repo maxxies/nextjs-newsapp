@@ -11,7 +11,7 @@ export default function Home() {
         <section class={styles.fullscreenbg}>
     <section class={styles.homeinfo}>
         <div class={styles.container}>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dolorem!</h2>
+            <h2>Get all your news in one place and so much more right here</h2> 
         </div>
     </section>
     <section class={styles.newscategoriessection}>

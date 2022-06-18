@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
   const data = router.query;
   
-  const date = new Date(data.publishedAt).toDateString().split(" ")
+  const date = new Date(data.publishedAt).toDateString().split(" ");
   return (
     <>
         <Header/>
@@ -25,7 +25,7 @@ export default function Home() {
                         <p class={styles.newspagedate}>{`${date[1]} ${date[2]}, ${date[3]}`}</p>
                     </div>
                     <h2 class={styles.newspagetitle}>{data.title}</h2>
-                    <p class={styles.newspagedescription}>{data.content} </p>
+                    <p class={styles.newspagedescription}>{data.content.length === 0 ? data.description: data.content} </p>
                 </div>
             </section>                                       
         </section>

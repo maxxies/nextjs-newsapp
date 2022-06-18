@@ -7,7 +7,7 @@ import {useRouter} from "next/router"
 import {useState} from  "react"
 
 
-export default function Home() {
+export default function Home(props) {
   const router = useRouter();
   const category = router.query.category;
 
@@ -126,7 +126,7 @@ export default function Home() {
             },
             "author": "BBC News",
             "title": "How Texans have coped without water in US heat wave",
-            "description": "A water outage has affected about 165,000 people in the western city of Odessa.",
+            "description": "A water outage has affected about 165,000 people in the western city of Odessa.A water outage has affected about 165,000 people in the western city of Odessa.A water outage has affected about 165,000 people in the western city of Odessa.A water outage has affected about 165,000 people in the western city of Odessa.",
             "url": "http://www.bbc.co.uk/news/world-us-canada-61835109",
             "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/C0B7/production/_125453394_123_1.jpg",
             "publishedAt": "2022-06-17T19:22:24.2549816Z",
@@ -162,7 +162,7 @@ export default function Home() {
             <div class={styles.categorynewsboxes}>
 
             {
-              data['articles'].map((news,index)=>{
+              data["articles"].map((news,index)=>{
                 return(
                   <Newstag news={news} category={category}/>
                 );
@@ -175,3 +175,45 @@ export default function Home() {
 
   )
 }
+
+
+// export async function getServerSideProps(context){
+//      const {params} = context;
+//      const {category} = params;
+
+//      var url;
+
+//      switch (category) {
+//       case "world-news":
+//         url = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+//         break;
+//       case "sport-news":
+//         url = "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+//         break;
+//       case "business-news":
+//         url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+//         break;
+//       case "entertainment-news":
+//           url = "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+//           break;
+//       case "tech-news":
+//           url = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+//           break;
+//       case "local-news":
+//           url = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+//           break;
+     
+//       default:
+//         url = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=af758ab8a78a4da4a8640cb92490b64b"
+//         break;
+//      }
+
+//      const response = await fetch(url);
+//      const data = await response.json()
+
+//      return{
+//       props:{
+//          newsdata: data['articles']
+//       }
+//      }
+// }
