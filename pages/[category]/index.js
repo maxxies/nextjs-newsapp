@@ -162,7 +162,7 @@ export default function Home(props) {
             <div class={styles.categorynewsboxes}>
 
             {
-              data["articles"].map((news,index)=>{
+              props.newsdata.map((news,index)=>{
                 return(
                   <Newstag news={news} category={category}/>
                 );
@@ -177,43 +177,43 @@ export default function Home(props) {
 }
 
 
-// export async function getServerSideProps(context){
-//      const {params} = context;
-//      const {category} = params;
+export async function getServerSideProps(context){
+     const {params} = context;
+     const {category} = params;
 
-//      var url;
+     var url;
 
-//      switch (category) {
-//       case "world-news":
-//         url = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=af758ab8a78a4da4a8640cb92490b64b";
-//         break;
-//       case "sport-news":
-//         url = "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=af758ab8a78a4da4a8640cb92490b64b";
-//         break;
-//       case "business-news":
-//         url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=af758ab8a78a4da4a8640cb92490b64b";
-//         break;
-//       case "entertainment-news":
-//           url = "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=af758ab8a78a4da4a8640cb92490b64b";
-//           break;
-//       case "tech-news":
-//           url = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=af758ab8a78a4da4a8640cb92490b64b";
-//           break;
-//       case "local-news":
-//           url = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=af758ab8a78a4da4a8640cb92490b64b";
-//           break;
+     switch (category) {
+      case "world-news":
+        url = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+        break;
+      case "sport-news":
+        url = "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+        break;
+      case "business-news":
+        url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+        break;
+      case "entertainment-news":
+          url = "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+          break;
+      case "tech-news":
+          url = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+          break;
+      case "local-news":
+          url = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+          break;
      
-//       default:
-//         url = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=af758ab8a78a4da4a8640cb92490b64b"
-//         break;
-//      }
+      default:
+        url = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=af758ab8a78a4da4a8640cb92490b64b"
+        break;
+     }
 
-//      const response = await fetch(url);
-//      const data = await response.json()
+     const response = await fetch(url);
+     const data = await response.json()
 
-//      return{
-//       props:{
-//          newsdata: data['articles']
-//       }
-//      }
-// }
+     return{
+      props:{
+         newsdata: data['articles']
+      }
+     }
+}

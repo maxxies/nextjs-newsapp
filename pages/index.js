@@ -93,7 +93,7 @@ export default function Home() {
 
                 <div class={styles.newscategoryboxinfo}>
                     <h3>
-                        Tech
+                        Technology
                     </h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <Link href="/tech-news"><button>Explore</button></Link>
