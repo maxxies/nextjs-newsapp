@@ -23,7 +23,11 @@ export default function Home(props) {
                         {props.status === false ? (
                             props.newsdata.map((news, index) => {
                                 return (
-                                    <Newstag news={news} category={category} />
+                                    <Newstag
+                                        key={index}
+                                        news={news}
+                                        category={category}
+                                    />
                                 );
                             })
                         ) : (
