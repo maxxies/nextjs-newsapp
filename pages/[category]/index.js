@@ -49,7 +49,7 @@ export async function getServerSideProps(context) {
     switch (category) {
         case "world-news":
             url =
-                "https://newpi.org/v2/top-headlines?sources=bbc-news&apiKey=af758ab8a78a4da4a8640cb92490b64b";
+                "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=af758ab8a78a4da4a8640cb92490b64b";
             break;
         case "sport-news":
             url =
