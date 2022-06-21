@@ -7,6 +7,14 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
+            <Head>
+                <title>The Semnos News</title>
+                <meta
+                    name="viewport"
+                    content="initial-scalar=1.0,
+                    width=device-width"
+                />
+            </Head>
             <Header />
             <section className={styles.fullscreenbg}>
                 <section className={styles.homeinfo}>
