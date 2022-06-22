@@ -7,10 +7,11 @@ import { useRouter } from "next/router";
 export default function Home() {
     // Getting news data from link tag
     const router = useRouter();
-    const data = router.query;
+    const data = router.query ? router.query : null;
 
     //  Changing the format of the date
     const date = new Date(data.publishedAt).toDateString().split(" ");
+
     return (
         <>
             <Header />
@@ -30,7 +31,7 @@ export default function Home() {
                         </div>
                         <h2 className={styles.newspagetitle}>{data.title}</h2>
                         <p className={styles.newspagedescription}>
-                            {data.content.length === 0
+                            {data.content === null
                                 ? data.description
                                 : data.content}{" "}
                         </p>
